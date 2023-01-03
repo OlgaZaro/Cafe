@@ -14,14 +14,14 @@ import java.util.Scanner;
 
 import static com.solvd.cafe.cafe.Check.getStrava;
 
-public class BankService {
+public class ClientService {
     public static void start() throws PhoneException, NumberException, EmailException {
 
         Initialization.greetings();
         Initialization.initialization();
     }
     public static void stravaOrder() {
-        final Logger logger = LogManager.getLogger(BankService.class);
+        final Logger logger = LogManager.getLogger(ClientService.class);
 
         try {
             int sum;
