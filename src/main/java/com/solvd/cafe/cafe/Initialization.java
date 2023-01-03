@@ -30,7 +30,7 @@ public class Initialization {
                 if (number == 1) {
                     Client.clientName();
                     Contact.contact();
-                    logger.info("To reserve a table, select a table number from the list: ");
+                    logger.info("To reserve a table, select a table number from the list : ");
                     Equipment.tableList();
                     if (scanner.hasNextInt()) {
                         int tableNumber = scanner.nextInt();
