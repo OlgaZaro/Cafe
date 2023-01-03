@@ -3,7 +3,7 @@ package com.solvd.cafe.cafe;
 import com.solvd.cafe.exceptions.EmailException;
 import com.solvd.cafe.exceptions.NumberException;
 import com.solvd.cafe.exceptions.PhoneException;
-import com.solvd.cafe.menu.Menu;
+import com.solvd.cafe.service.ClientService;
 import com.solvd.cafe.service.GenerateInfo;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -71,7 +71,7 @@ public class Client extends Contact {
             }
             if (number == 2) {
                 chooseMenu();
-                Menu.stravaOrder();
+                ClientService.stravaOrder();
             }
         } else {
             new NumberException();
@@ -89,7 +89,7 @@ public class Client extends Contact {
             int number = scanner.nextInt();
             if (number == 1) {
                 chooseMenu();
-                Menu.stravaOrder();
+                ClientService.stravaOrder();
             }
         } else {
             new NumberException();

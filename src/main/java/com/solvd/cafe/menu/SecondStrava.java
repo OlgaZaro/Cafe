@@ -1,5 +1,7 @@
 package com.solvd.cafe.menu;
 
+import com.solvd.cafe.service.GenerateInfo;
+
 import java.util.HashMap;
 
 public class SecondStrava extends Menu implements GetPrice {
@@ -31,9 +33,9 @@ public class SecondStrava extends Menu implements GetPrice {
     public void stravaHash() {
         HashMap<Integer, String> stravaHash = new HashMap();
 
-        stravaHash.put(1, steak.secondStravaTitle);
-        stravaHash.put(2, salad.secondStravaTitle);
-        stravaHash.put(3, spaghetti.secondStravaTitle);
+        stravaHash.put(1, GenerateInfo.steak.secondStravaTitle);
+        stravaHash.put(2, GenerateInfo.salad.secondStravaTitle);
+        stravaHash.put(3, GenerateInfo.spaghetti.secondStravaTitle);
     }
     public float showPrice() {
         return getPrice();

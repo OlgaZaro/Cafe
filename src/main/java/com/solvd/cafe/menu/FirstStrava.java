@@ -2,6 +2,8 @@ package com.solvd.cafe.menu;
 
 import java.util.TreeMap;
 
+import static com.solvd.cafe.service.GenerateInfo.*;
+
 public class FirstStrava extends Menu implements GetPrice {
     private String firstStravaTitle;
 

@@ -5,7 +5,7 @@ import org.apache.logging.log4j.Logger;
 
 public class Desert extends Menu implements GetPrice {
     private static final Logger logger = LogManager.getLogger(Desert.class);
-    private String desertTitle;
+    private static String desertTitle;
 
     public Desert() {}
 
@@ -15,7 +15,7 @@ public class Desert extends Menu implements GetPrice {
         this.desertTitle = desertTitle;
     }
 
-    public String getDesertTitle() {
+    public static String getDesertTitle() {
         return desertTitle;
     }
 

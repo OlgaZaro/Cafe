@@ -1,10 +1,8 @@
 package com.solvd.cafe.cafe;
 
 import com.solvd.cafe.employee.Employee;
-import com.solvd.cafe.employee.Waiter;
 import com.solvd.cafe.exceptions.EmailException;
 import com.solvd.cafe.exceptions.PhoneException;
-import com.solvd.cafe.service.BankService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

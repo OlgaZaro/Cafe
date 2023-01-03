@@ -33,7 +33,7 @@ public class Check {
     }
 
     public void setStrava(List<String> strava) {
-        this.strava = strava;
+        Check.strava = strava;
     }
     public void setNumberCheck(int numberCheck) {
         this.numberCheck = numberCheck;

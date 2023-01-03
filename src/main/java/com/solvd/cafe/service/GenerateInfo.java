@@ -42,19 +42,31 @@ public class GenerateInfo {
             new Tables("Table №4", 5, "equipment", 4),
             new Tables("Table №5", 5, "equipment", 5));
 
-    static List<Menu> menuInfo = List.of(
-            new Desert(15, 100, "Tiramisu", 1),
-            new Desert(12, 150, "Cheesecake", 2),
-            new Desert(17, 120, "Trifle", 3),
-            new FirstStrava(15, 100, "Hodgepodge", 4),
-            new FirstStrava(17, 100, "Soup", 5),
-            new FirstStrava(18, 100, "Pickle soup", 6),
-            new SecondStrava(35, 200, "Steak", 7),
-            new SecondStrava(25, 150, "Salad", 8),
-            new SecondStrava(17, 300, "Spaghetti", 9),
-            new AlcoholicDrinks(20, 100, "Wine", 10),
-            new AlcoholicDrinks(15, 150, "Champagne", 11),
-            new SoftDrinks(10, 250, "Coffee", 12));
+    public static Desert tiramisu;
+    public static Desert cheesecake;
+    public static Desert trifle;
+    public static FirstStrava hodgepodge;
+    public static FirstStrava soup;
+    public static FirstStrava pickleSoup;
+    public static SecondStrava steak;
+    public static SecondStrava salad;
+    public static SecondStrava spaghetti;
+    public static AlcoholicDrinks wine;
+    public static AlcoholicDrinks champagne;
+    public static SoftDrinks coffee;
+    public static List<Menu> menuInfo = List.of(
+            tiramisu = new Desert(15, 100, "Tiramisu", 1),
+            cheesecake = new Desert(12, 150, "Cheesecake", 2),
+            trifle = new Desert(17, 120, "Trifle", 3),
+            hodgepodge = new FirstStrava(15, 100, "Hodgepodge", 4),
+            soup = new FirstStrava(17, 100, "Soup", 5),
+            pickleSoup = new FirstStrava(18, 100, "Pickle soup", 6),
+            steak = new SecondStrava(35, 200, "Steak", 7),
+            salad = new SecondStrava(25, 150, "Salad", 8),
+            spaghetti = new SecondStrava(17, 300, "Spaghetti", 9),
+            wine = new AlcoholicDrinks(20, 100, "Wine", 10),
+            champagne = new AlcoholicDrinks(15, 150, "Champagne", 11),
+            coffee = new SoftDrinks(10, 250, "Coffee", 12));
 
     public static void streamForEach() {
         Stream<Employee> stream = employeeService.stream();
@@ -66,7 +78,8 @@ public class GenerateInfo {
         Stream<Equipment> stream2 = equipmentList.stream();
         stream2.forEach(x -> logger.info(x));
     }
-        public static void menuInfo() {
+
+    public static void menuInfo() {
         Stream<Menu> stream3 = menuInfo.stream();
         stream3.forEach(x -> logger.info(x));
     }

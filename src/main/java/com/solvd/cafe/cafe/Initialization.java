@@ -4,7 +4,6 @@ import com.solvd.cafe.equipment.Equipment;
 import com.solvd.cafe.exceptions.EmailException;
 import com.solvd.cafe.exceptions.NumberException;
 import com.solvd.cafe.exceptions.PhoneException;
-import com.solvd.cafe.service.BankService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -15,19 +14,20 @@ public class Initialization {
 
     public static void greetings() {
         logger.info("Good afternoon!");
+        logger.info("If you want to reserve a table, enter - 1");
     }
 
     public static void initialization() throws PhoneException, EmailException, NumberException {
-        logger.info("If you want to make a order, enter - 1");
-        logger.info("If you want to reserve a table, enter - 2");
+        logger.info("If you want to make a order, enter - 2");
+
         Scanner scanner = new Scanner(System.in);
         if (scanner.hasNextInt()) {
             int number = scanner.nextInt();
             if (number > 0 && number < 3) {
-                if (number == 1) {
+                if (number == 2) {
                     Client.registration();
                 }
-                if (number == 2) {
+                if (number == 1) {
                     Client.clientName();
                     Contact.contact();
                     logger.info("To reserve a table, select a table number from the list : ");
@@ -37,27 +37,19 @@ public class Initialization {
                         if (tableNumber > 0 && tableNumber < 6) {
                             switch (tableNumber) {
                                 case 1:
-                                    logger.info(Equipment.table1.getTitle() + " reserved");
+                                    logger.info(Equipment.table1.getTitle() + " reserved for the client " + Client.client.getClientName());
                                     break;
-                            }
-                            switch (tableNumber) {
                                 case 2:
-                                    logger.info(Equipment.table2.getTitle() + " reserved");
+                                    logger.info(Equipment.table2.getTitle() + " reserved for the client " + Client.client.getClientName());
                                     break;
-                            }
-                            switch (tableNumber) {
                                 case 3:
-                                    logger.info(Equipment.table3.getTitle() + " reserved");
+                                    logger.info(Equipment.table3.getTitle() + " reserved for the client " + Client.client.getClientName());
                                     break;
-                            }
-                            switch (tableNumber) {
                                 case 4:
-                                    logger.info(Equipment.table4.getTitle() + " reserved");
+                                    logger.info(Equipment.table4.getTitle() + " reserved for the client " + Client.client.getClientName());
                                     break;
-                            }
-                            switch (tableNumber) {
                                 case 5:
-                                    logger.info(Equipment.table5.getTitle() + " reserved");
+                                    logger.info(Equipment.table5.getTitle() + " reserved for the client " + Client.client.getClientName());
                                     break;
                             }
                             logger.info("We expect you soon!");
