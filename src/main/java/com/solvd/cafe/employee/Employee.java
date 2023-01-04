@@ -1,6 +1,7 @@
 package com.solvd.cafe.employee;
 
 import com.solvd.cafe.menuBar.AlcoholicDrinks;
+import com.solvd.cafe.service.GenerateInfo;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -24,10 +25,10 @@ public abstract class Employee {
     public static void employee() {
         LinkedList<String> employee = new LinkedList<>();
 
-        employee.add(0, administrator.getName());
-        employee.add(1, barmen.getName());
-        employee.add(2, cook.getName());
-        employee.add(3, waiter.getName());
+        employee.add(0, GenerateInfo.administrator.getName());
+        employee.add(1, GenerateInfo.barmen.getName());
+        employee.add(2, GenerateInfo.cook.getName());
+        employee.add(3, GenerateInfo.waiter.getName());
 
         Stream<String> stream = employee.stream();
         stream.forEach(x -> logger.info(x));
@@ -52,11 +53,6 @@ public abstract class Employee {
     public void printNumberEmployee() {
         System.out.println("Number of employee" + countPeople);
     }
-
-    public static Administrator administrator = new Administrator("Alen", 32, "Administrator", 35.000f);
-    public static Barmen barmen = new Barmen("Jon", 28, "Barmen", 32.000f);
-    public static Cook cook = new Cook("Den", 33, "Cook", 47.000f);
-    public static Waiter waiter = new Waiter("Paolo", 22, "Waiter", 25.000f);
 
     public static void info() {
         Info info = new Administrator("Alen", 32, "Administrator", 35.000f);

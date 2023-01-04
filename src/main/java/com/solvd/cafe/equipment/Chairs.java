@@ -1,11 +1,6 @@
 package com.solvd.cafe.equipment;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-public class Chairs extends Equipment implements Count {
-
-    private static final Logger logger = LogManager.getLogger(Chairs.class);
+public class Chairs extends Equipment {
     private String equipmentType;
 
     public Chairs() {}
@@ -28,10 +23,5 @@ public class Chairs extends Equipment implements Count {
         return "Chairs: " + "title = " + getTitle() + ", "
                 + "count = " + getCount() + ", "
                 + "equipmentType = " + getEquipmentType();
-    }
-
-    @Override
-    public void countAmount(){
-        logger.info("Number of total: " + getCount());
     }
 }

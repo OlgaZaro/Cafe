@@ -1,11 +1,7 @@
 package com.solvd.cafe.menu;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 public class Desert extends Menu implements GetPrice {
-    private static final Logger logger = LogManager.getLogger(Desert.class);
-    private static String desertTitle;
+    private String desertTitle;
 
     public Desert() {}
 
@@ -15,7 +11,7 @@ public class Desert extends Menu implements GetPrice {
         this.desertTitle = desertTitle;
     }
 
-    public static String getDesertTitle() {
+    public String getDesertTitle() {
         return desertTitle;
     }
 

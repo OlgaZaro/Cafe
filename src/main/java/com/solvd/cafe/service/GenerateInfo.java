@@ -22,25 +22,36 @@ import java.util.stream.Stream;
 public class GenerateInfo {
     private static final Logger logger = LogManager.getLogger(GenerateInfo.class);
 
+    public static Administrator administrator;
+    public static  Barmen barmen;
+    public static Cook cook;
+    public static Waiter waiter;
     static List<Employee> employeeService = List.of(
-            new Administrator("Alen", 32, "Administrator", 35.000f),
-            new Barmen("Jon", 28, "Barmen", 32.000f),
-            new Cook("Den", 33, "Cook", 47.000f),
-            new Waiter("Paolo", 22, "Waiter", 25.000f));
+            administrator = new Administrator("Alen", 32, "Administrator", 35.000f),
+            barmen = new Barmen("Jon", 28, "Barmen", 32.000f),
+            cook = new Cook("Den", 33, "Cook", 47.000f),
+            waiter = new Waiter("Paolo", 22, "Waiter", 25.000f));
 
     static List<Client> regularClientList = List.of(
-            new Client(77789070, "Calvin", "hhh@gmail.com"),
-            new Client(878970563, "Frank", "jjj@gmail.com"),
-            new Client(79837569, "Den", "uuu@gmail.com"));
+            new Client("380508887755", "Calvin", "hhh@gmail.com"),
+            new Client("380503345577", "Frank", "jjj@gmail.com"),
+            new Client("380505558899", "Den", "uuu@gmail.com"));
 
+    public static BarCounter barCounter;
+    public static Chairs chairs;
+    public static Tables table1;
+    public static Tables table2;
+    public static Tables table3;
+    public static Tables table4;
+    public static Tables table5;
     static List<Equipment> equipmentList = List.of(
-            new BarCounter("BarCounter", 1, "equipment"),
-            new Chairs("Chairs", 15, "equipment"),
-            new Tables("Table №1", 5, "equipment", 1),
-            new Tables("Table №2", 5, "equipment", 2),
-            new Tables("Table №3", 5, "equipment", 3),
-            new Tables("Table №4", 5, "equipment", 4),
-            new Tables("Table №5", 5, "equipment", 5));
+            barCounter = new BarCounter("BarCounter", 1, "equipment"),
+            chairs = new Chairs("Chairs", 15, "equipment"),
+            table1 = new Tables("Table №1", 5, "equipment", 1, Collections.singletonList(1)),
+            table2 = new Tables("Table №2", 5, "equipment", 2, Collections.singletonList(1)),
+            table3 = new Tables("Table №3", 5, "equipment", 3, Collections.singletonList(3)),
+            table4 = new Tables("Table №4", 5, "equipment", 4, Collections.singletonList(4)),
+            table5 = new Tables("Table №5", 5, "equipment", 5, Collections.singletonList(5)));
 
     public static Desert tiramisu;
     public static Desert cheesecake;
@@ -100,10 +111,10 @@ public class GenerateInfo {
 
     public static void streamAllMatch() {
         LinkedList<String> employee = new LinkedList<>();
-        employee.add(Administrator.administrator.getName());
-        employee.add(Barmen.barmen.getName());
-        employee.add(Cook.cook.getName());
-        employee.add(Waiter.waiter.getName());
+        employee.add(GenerateInfo.administrator.getName());
+        employee.add(GenerateInfo.barmen.getName());
+        employee.add(GenerateInfo.cook.getName());
+        employee.add(GenerateInfo.waiter.getName());
         Stream<String> stream = employee.stream();
 
         boolean allMatch = stream.allMatch((value) -> {

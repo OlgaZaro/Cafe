@@ -2,7 +2,6 @@ package com.solvd.cafe.cafe;
 
 import com.solvd.cafe.exceptions.EmailException;
 import com.solvd.cafe.exceptions.NumberException;
-import com.solvd.cafe.exceptions.PhoneException;
 import com.solvd.cafe.service.ClientService;
 import com.solvd.cafe.service.GenerateInfo;
 import org.apache.logging.log4j.LogManager;
@@ -20,7 +19,7 @@ public class Client extends Contact {
         this.clientName = clientName;
     }
 
-    public Client(int clientPhone, String clientEmail, String clientName) {
+    public Client(String clientPhone, String clientEmail, String clientName) {
         super(clientPhone, clientEmail);
         this.clientName = clientName;
     }
@@ -44,7 +43,7 @@ public class Client extends Contact {
     }
 
     public static void clientName() {
-        logger.info("Enter your name");
+        logger.info("Please, enter your first and last name");
         Scanner scanner = new Scanner(System.in);
         client = new Client(scanner.nextLine());
         try {
@@ -54,7 +53,7 @@ public class Client extends Contact {
         }
     }
 
-    public static void registration() throws PhoneException, EmailException, NumberException {
+    public static void registration() throws EmailException {
         logger.info("If do you want to register for bonuses enter - 1");
         logger.info("If you just want to order dishes, enter - 2");
         Scanner scanner = new Scanner(System.in);
@@ -83,7 +82,7 @@ public class Client extends Contact {
         GenerateInfo.menuInfo();
     }
 
-    public static void select() throws NumberException {
+    public static void select() {
         Scanner scanner = new Scanner(System.in);
         if (scanner.hasNextInt()) {
             int number = scanner.nextInt();

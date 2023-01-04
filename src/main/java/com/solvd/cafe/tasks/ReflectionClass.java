@@ -1,13 +1,10 @@
 package com.solvd.cafe.tasks;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 public class ReflectionClass {
-    private static final Logger logger = LogManager.getLogger(ReflectionClass.class);
     private static String name = "default";
     private static int number = 5;
 

@@ -13,7 +13,7 @@ public enum DayWeek {
     FRIDAY("Day of the week - Friday"),
     SATURDAY("Day of the week - Saturday");
 
-    private String dayOfWeek;
+    private final String dayOfWeek;
     DayWeek(String dayOfWeek) {
         this.dayOfWeek = dayOfWeek;
     }

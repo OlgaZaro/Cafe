@@ -1,26 +1,28 @@
 package com.solvd.cafe.equipment;
 
-import com.solvd.cafe.exceptions.NumberException;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import java.util.ArrayList;
+import java.util.List;
 
-import java.util.Scanner;
-
-public class Tables extends Equipment implements Count {
-    private static final Logger logger = LogManager.getLogger(Tables.class);
+public class Tables extends Equipment {
     private String equipmentType;
     private int tableNumber;
+    private static List<Integer> number = new ArrayList<>();
 
     public Tables() {}
 
-    public Tables(String title, int count, String equipmentType, int tableNumber) {
+    public Tables(String title, int count, String equipmentType, int tableNumber, List<Integer> number) {
         super(title, count);
         this.equipmentType = equipmentType;
         this.tableNumber = tableNumber;
+        this.number = number;
     }
 
     public String getEquipmentType() {
         return equipmentType;
+    }
+
+    public static List<Integer> getNumber() {
+        return number;
     }
 
     public void setEquipmentType(String equipmentType) {
@@ -31,6 +33,10 @@ public class Tables extends Equipment implements Count {
         return tableNumber;
     }
 
+    public static void setNumber(List<Integer> number) {
+        Tables.number = number;
+    }
+
     public void setTableNumber(int tableNumber) {
         this.tableNumber = tableNumber;
     }
@@ -39,10 +45,5 @@ public class Tables extends Equipment implements Count {
         return "Tables: " + "title = " + getTitle() + ", "
                 + "count = " + getCount() + ", "
                 + "equipmentType = " + getEquipmentType();
-    }
-
-    @Override
-    public void countAmount() {
-        logger.info("Number of total: " + getCount());
     }
 }

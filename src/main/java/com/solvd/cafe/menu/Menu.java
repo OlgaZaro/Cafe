@@ -1,17 +1,6 @@
 package com.solvd.cafe.menu;
 
-import com.solvd.cafe.cafe.Check;
-import com.solvd.cafe.cafe.Contact;
-import com.solvd.cafe.service.GenerateInfo;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import java.util.Scanner;
-
-import static com.solvd.cafe.cafe.Check.getStrava;
-
 public abstract class Menu {
-    private static final Logger logger = LogManager.getLogger(Menu.class);
-
     private int price;
     private int portion;
     private int number;
